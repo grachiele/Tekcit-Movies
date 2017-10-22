@@ -1,0 +1,19 @@
+<h1 class="ui centered header"><%= "#{@items.first.class.to_s.pluralize }"%></h1><br />
+
+<div class="card_padding">
+  <div class="ui four centered doubling cards">
+    <% @items.order(:name).each do |item| %>
+    <a class="card" href="/<%= item.class.to_s.downcase.pluralize %>/<%= item.id %>" >
+      <% if item.class.method_defined? :thumbnail %>
+        <img src=<%= item.thumbnail%> height="200">
+      <% else %>
+        <!-- Genre currently has no thumbnails -->
+        <img src=<%= Movie.all.sample.thumbnail%> height="200" >
+      <% end %>
+      <div class="content">
+        <div class="ui centered header"> <%= item.name %></div>
+      </div>
+    </a>
+    <% end %>
+  </div>
+</div>

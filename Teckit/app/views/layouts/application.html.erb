@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html background-color="gray">
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script src="semantic/dist/semantic.min.js"></script>
+  <head>
+    <title>Teckít</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      body {
+        background: #5882a0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="inverted ui menu">
+      <div class="header item"><%= link_to "Tekcít", root_path %></div>
+      <% if logged_in? %>
+        <%= link_to "Hello, #{User.find(session[:user_id]).first_name}!", user_path(User.find(session[:user_id])), class: "item" %>
+        <div class="right menu">
+          <%= link_to "Sign Out", signout_path, class: "item" %>
+        </div>
+      <% end %>
+      <% if !logged_in? %>
+      <%= link_to "Sign In", signin_path, class: "item" %>
+        <div class="right menu">
+          <%= link_to "Sign Up", signup_path, class: "item" %>
+        </div>
+      <% end %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<h1 align="center"><%= flash[:message] %></h1>
+
+<div class="card_padding">
+  <div class="ui four centered doubling cards">
+    <a class="card" href="/cities" >
+        <img src=<%= City.all.sample.thumbnail%> height="200" >
+      <div class="content">
+        <div class="ui centered header">Cities</div>
+          <div class="centered description">
+             <b><p align="center">Take a trip for a show</p></b>
+          </div>
+      </div>
+    </a>
+    <a class="card" href="/movietheatres" >
+        <img src=<%= MovieTheatre.all.sample.thumbnail%> height="200" >
+      <div class="content">
+        <div class="ui centered header">Movie Theatres</div>
+          <div class="centered description">
+             <b><p align="center">Come for the experience</p></b>
+             <b><p align="center">Stay for the snacks </p></b>
+          </div>
+      </div>
+    </a>
+    <a class="card" href="/movies" >
+        <img src=<%= Movie.all.sample.thumbnail%> height="200" >
+      <div class="content">
+        <div class="ui centered header">Movies</div>
+          <div class="description">
+           <b><p align="center">Find that perfect adventure </p></b>
+          </div>
+      </div>
+    </a>
+    <a class="card" href="/genres" >
+        <img src=<%= Movie.all.sample.thumbnail%> height="200" >
+      <div class="content">
+        <div class="ui centered header">Genres</div>
+        <div class="description">
+         <b><p align="center">What's your category?</p></b>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

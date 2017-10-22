@@ -1,0 +1,26 @@
+<h1 align="center"><%= @user.first_name %>'s Ticket Page!</h1><br />
+
+<div class="card_padding">
+  <div class="ui four centered doubling cards">
+    <% if !@user.tickets.empty? %>
+      <% @tickets.each do |ticket| %>
+      <div class="ui fluid card">
+        <% showtime =  Showtime.find(ticket.showtime_id) %>
+        <% theatre = MovieTheatre.find(showtime.movie_theatre_id) %>
+        <img src=<%= showtime.movie.thumbnail%> height="200" >
+        <div class="content">
+            <p class="ui centered header"><%= showtime.movie.name %></p>
+            <b>Movie Theatre:</b> <%= theatre.name %><br />
+            <b>Plays at:</b> <%= showtime.start_time %><br />
+            <b>Date:</b> <%= showtime.show_date %><br />
+        </div>
+          <form action=<%= ticket %> method="POST">
+            <%= f.submit "Delete Ticket", class: "fluid ui bottom attached red button" %>
+          <% end %>
+      </div>
+      <% end %>
+    <% else %>
+      <p class="ui centered header">You have no tickets! Go buy some!</p>
+    <% end %>
+  </div>
+</div>

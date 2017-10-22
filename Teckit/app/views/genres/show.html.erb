@@ -1,0 +1,17 @@
+<h1 align="center">Avaliable <%= @genre.name %> Movies</h1>
+
+<div class="card_padding">
+  <div class="ui four doubling cards">
+    <% @movies.each do |movie| %>
+      <div class="card">
+        <img src=<%= movie.thumbnail%> height="200">
+        <div class="content">
+          <div class="ui centered header">
+            <%= movie.name %>
+          </div>
+        </div>
+        <%= button_to "See Movie Info", movie_path(movie), {method: :get, class: "fluid ui black button"}  %>
+      </div>
+    <% end %>
+  </div>
+</div>

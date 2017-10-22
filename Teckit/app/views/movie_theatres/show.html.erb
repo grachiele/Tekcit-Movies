@@ -1,0 +1,44 @@
+<img class="ui centered bordered rounded image" src=<%= @movie_theatre.full_image%> height="500" width="95%" >
+<h1 align="center">Movies playing at <%= @movie_theatre.name %></h1>
+
+<div class="card_padding">
+  <div class="ui four centered doubling cards">
+    <% if !@showtimes.empty? %>
+        <% @showtimes.each do |showtime| %>
+          <div class="ui fluid card">
+            <img src=<%= showtime.movie.thumbnail%> height="200" >
+            <div class="content">
+              <p class="ui centered header"><%= showtime.movie.name %></p>
+              <b>Date:</b> <%= showtime.show_date %><br />
+              <b>Showtime:</b> <%= showtime.start_time %><br />
+            </div>
+            <% if logged_in? %>
+              <% if showtime.tickets_left > 0 %>
+                <%= form_for :ticket, options = {url: '/tickets', method: 'post'}  do |f| %>
+                  <%= f.hidden_field :user_id, :value => session[:user_id]%>
+                  <%= f.hidden_field :showtime_id, :value => showtime.id %>
+                  <div class="fluid ui labeled button">
+                    <%= f.submit "Purchase Ticket", class: "fluid ui black button" %>
+                    <% if showtime.tickets_left > 7 %>
+                      <%= f.label "Tickets Left: #{showtime.tickets_left}", class: "ui blue label" %>
+                    <% elsif showtime.tickets_left < 7 && showtime.tickets_left > 3 %>
+                        <%= f.label "Tickets Left: #{showtime.tickets_left}", class: "ui yellow label" %>
+                    <% else %>
+                        <%= f.label "Tickets Left: #{showtime.tickets_left}", class: "ui red label" %>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% else %>
+                  <div class="ui black disabled button">
+                      Sold Out!
+                  </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+
+    <% else %>
+        <p class="ui centered header">No Current Showtimes Avaliable. Coming Soon!</p>
+    <% end %>
+  </div>
+</div>
