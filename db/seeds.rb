@@ -10,11 +10,13 @@ City.destroy_all
 MovieTheatre.destroy_all
 Showtime.destroy_all
 
-
-genres = %w(Comedy Horror Action Romance Drama War Animation)
-
-genres.each do |genre|
-  Genre.create(name: genre)
+genre_api = RestClient.get("https://api.themoviedb.org/3/genre/movie/list?api_key=feb6b26953a3705ebdcb09dd99be32de&language=en-US")
+genre_data = JSON.parse(genre_api)
+genre_data["genres"].each do |genre|
+  foo = Genre.new
+  foo.id = genre["id"]
+  foo.name = genre["name"]
+  foo.save
 end
 
 require 'ffaker'
@@ -26,7 +28,7 @@ require 'ffaker'
 end
 
 10.times do
-  api = RestClient.get("https://wall.alphacoders.com/api2.0/get.php?auth=e624a59c6b8c30c4d361a70a7efc06db&method=by_collection&id=296&page=#{rand(1..20)}&info_level=2")
+  api = RestClient.get("https://wall.alphacoders.com/api2.0/get.php?auth=e624a59c6b8c30c4d361a70a7efc06db&method=sub_category&id=160335")
   data = JSON.parse(api)
   images = data["wallpapers"].sample
   City.create(name: FFaker::Address.city, full_image: images["url_image"], thumbnail: images["url_thumb"])
@@ -41,7 +43,9 @@ end
 end
 
 1000.times do
-  start_time = "#{rand(1..24)}:#{rand(6)}#{rand(10)}"
+  hour = rand(1..24)
+  minutes = %w[00, 15, 30, 45].sample
+  start_time = "#{hour}:#{minutes}"
   show_date = "0#{rand(8..9)}/0#{rand(1..7)}/2017"
   Showtime.create(start_time: start_time, movie_id: Movie.all.sample.id, movie_theatre_id: MovieTheatre.all.sample.id, show_date: show_date )
 end
