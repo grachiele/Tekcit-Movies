@@ -1,5 +1,6 @@
 <h1 class="ui centered header"><%= "#{@items.first.class.to_s.pluralize }"%></h1><br />
 
+<% if(@items.sample.class.method_defined? :name) %>
 <div class="card_padding">
   <div class="ui four centered doubling cards">
     <% @items.order(:name).each do |item| %>
@@ -17,3 +18,17 @@
     <% end %>
   </div>
 </div>
+<% else %>
+<div class="card_padding">
+  <div class="ui four centered doubling cards">
+    <% @items.order(:title).each do |item| %>
+    <a class="card" href="/<%= item.class.to_s.downcase.pluralize %>/<%= item.id %>" >
+        <img src=<%= item.poster%> height="200" >
+      <div class="content">
+        <div class="ui centered header"> <%= item.title %></div>
+      </div>
+    </a>
+    <% end %>
+  </div>
+</div>
+<% end %>

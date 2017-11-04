@@ -1,5 +1,6 @@
-<img class="ui centered bordered rounded image" src=<%= @movie.full_image%> height="500" width="95%" >
-<h1 align="center"><%= @movie.name %></h1>
+<img class="ui centered bordered rounded image" src=<%= @movie.poster%> height="500" width="95%" >
+<h1 align="center"><%= @movie.title %></h1>
+
 
 
 <div class="card_padding">
@@ -20,9 +21,9 @@
                   <%= f.hidden_field :showtime_id, :value => showtime.id %>
                   <div class="fluid ui labeled button">
                     <%= f.submit "Purchase Ticket", class: "fluid ui black button" %>
-                    <% if showtime.tickets_left > 7 %>
+                    <% if showtime.tickets_left >= 7 %>
                       <%= f.label "Tickets Left: #{showtime.tickets_left}", class: "ui blue label" %>
-                    <% elsif showtime.tickets_left < 7 && showtime.tickets_left > 3 %>
+                    <% elsif showtime.tickets_left < 7 && showtime.tickets_left >= 3 %>
                         <%= f.label "Tickets Left: #{showtime.tickets_left}", class: "ui yellow label" %>
                     <% else %>
                         <%= f.label "Tickets Left: #{showtime.tickets_left}", class: "ui red label" %>

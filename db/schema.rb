@@ -39,10 +39,12 @@ ActiveRecord::Schema.define(version: 20170823142006) do
   end
 
   create_table "movies", force: :cascade do |t|
-    t.string "name"
-    t.integer "genre_id"
-    t.string "thumbnail"
-    t.string "full_image"
+    t.string "title"
+    t.integer "genre_id", default: [], array: true
+    t.string "poster"
+    t.string "overview"
+    t.string "release_date"
+    t.string "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
