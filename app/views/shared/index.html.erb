@@ -1,18 +1,20 @@
 <h1 class="ui centered header"><%= "#{@items.first.class.to_s.pluralize }"%></h1><br />
 
 <% if(@items.sample.class.method_defined? :name) %>
+<%# City && Theatre List %>
 <div class="card_padding">
   <div class="ui four centered doubling cards">
     <% @items.order(:name).each do |item| %>
     <a class="card" href="/<%= item.class.to_s.downcase.pluralize %>/<%= item.id %>" >
       <% if item.class.method_defined? :thumbnail %>
-        <img src=<%= item.thumbnail%> height="200">
+        <img src=<%= item.thumbnail%> height="200px">
       <% else %>
+      <%# Genre List %>
         <%movie_list = Movie.all.select { |movie| movie.genre_id.include?(item.id) }%>
         <%if !movie_list.empty?%>
           <img class="lazy" src=<%= movie_list.sample.smaller_poster%> data-src=<%= movie_list.sample.poster%>height="200" >
         <%else%>  
-          <img src="https://jackweather-140005.appspot.com/res/0.jpg" height="200" >
+          <img src="https://jackweather-140005.appspot.com/res/0.jpg" height="200px" >
         <%end%>
       <% end %>
       <div class="content">
@@ -23,11 +25,12 @@
   </div>
 </div>
 <% else %>
+<%# Movie List %>
 <div class="card_padding">
   <div class="ui four centered doubling cards">
     <% @items.order(:title).each do |item| %>
     <a class="card" href="/<%= item.class.to_s.downcase.pluralize %>/<%= item.id %>" >
-        <img class="lazy" data-src=<%= item.poster%> height="200" >
+        <img class="lazy" src=<%=item.smaller_poster%> data-src=<%= item.poster%> height="200px" >
       <div class="content">
         <div class="ui centered header"> <%= item.title %></div>
       </div>
