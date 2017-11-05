@@ -1,38 +1,58 @@
 <!DOCTYPE html>
 <html background-color="gray">
-  <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-  <head>
-    <title>Teckít</title>
-    <%= csrf_meta_tags %>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.6/jquery.lazy.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.6/jquery.lazy.plugins.min.js"></script>
+<script>
+  $(function () {
+    $('.lazy').Lazy({
+        // your configuration goes here
+        scrollDirection: 'vertical',
+        effect: 'fadeIn',
+        visibleOnly: true,
+        onError: function(element) {
+            console.log('error loading ' + element.data('src'));
+        }
+    });
+  });
+</script>
+
+<head>
+  <title>Teckít</title>
+  <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <style>
-      body {
-        background: #5882a0;
-      }
-    </style>
-  </head>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <style>
+          body {
+            background: #5882a0;
+          }
+        </style>
+</head>
 
-  <body>
-    <div class="inverted ui menu">
-      <div class="header item"><%= link_to "Tekcít", root_path %></div>
-      <% if logged_in? %>
-        <%= link_to "Hello, #{User.find(session[:user_id]).first_name}!", user_path(User.find(session[:user_id])), class: "item" %>
+<body>
+  <div class="inverted ui menu">
+    <div class="header item">
+      <%= link_to "Tekcít", root_path %>
+    </div>
+    <% if logged_in? %>
+      <%= link_to "Hello, #{User.find(session[:user_id]).first_name}!", user_path(User.find(session[:user_id])), class: "item" %>
         <div class="right menu">
           <%= link_to "Sign Out", signout_path, class: "item" %>
         </div>
-      <% end %>
-      <% if !logged_in? %>
-      <%= link_to "Sign In", signin_path, class: "item" %>
-        <div class="right menu">
-          <%= link_to "Sign Up", signup_path, class: "item" %>
-        </div>
-      <% end %>
-    </div>
-    <%= yield %>
-  </body>
+        <% end %>
+          <% if !logged_in? %>
+            <%= link_to "Sign In", signin_path, class: "item" %>
+              <div class="right menu">
+                <%= link_to "Sign Up", signup_path, class: "item" %>
+              </div>
+              <% end %>
+  </div>
+  <%= yield %>
+
+
+
+</body>
+
 </html>

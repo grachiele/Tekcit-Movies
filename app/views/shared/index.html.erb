@@ -10,7 +10,7 @@
       <% else %>
         <%movie_list = Movie.all.select { |movie| movie.genre_id.include?(item.id) }%>
         <%if !movie_list.empty?%>
-          <img src=<%= movie_list.sample.poster%> height="200" >
+          <img class="lazy" src=<%= movie_list.sample.smaller_poster%> data-src=<%= movie_list.sample.poster%>height="200" >
         <%else%>  
           <img src="https://jackweather-140005.appspot.com/res/0.jpg" height="200" >
         <%end%>
@@ -27,7 +27,7 @@
   <div class="ui four centered doubling cards">
     <% @items.order(:title).each do |item| %>
     <a class="card" href="/<%= item.class.to_s.downcase.pluralize %>/<%= item.id %>" >
-        <img src=<%= item.poster%> height="200" >
+        <img class="lazy" data-src=<%= item.poster%> height="200" >
       <div class="content">
         <div class="ui centered header"> <%= item.title %></div>
       </div>

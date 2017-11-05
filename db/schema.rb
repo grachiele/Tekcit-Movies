@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170823142006) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.integer "genre_id", default: [], array: true
+    t.string "smaller_poster"
     t.string "poster"
     t.string "overview"
     t.string "release_date"
@@ -56,7 +57,7 @@ ActiveRecord::Schema.define(version: 20170823142006) do
     t.integer "movie_theatre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "tickets_left", default: 10
+    t.integer "tickets_left"
   end
 
   create_table "tickets", force: :cascade do |t|

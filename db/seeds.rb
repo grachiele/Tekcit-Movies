@@ -28,8 +28,10 @@ def create_movie(movie)
   foo.id = movie["id"]
   if movie["backdrop_path"] == nil
     foo.poster = "https://image.tmdb.org/t/p/original#{movie["poster_path"]}"
+    foo.smaller_poster = "https://image.tmdb.org/t/p/w640#{movie["poster_path"]}"
   else
     foo.poster = "https://image.tmdb.org/t/p/original#{movie["backdrop_path"]}"
+    foo.smaller_poster = "https://image.tmdb.org/t/p/original#{movie["poster_path"]}"
   end
   foo.overview = movie["overview"]
   foo.release_date = movie["release_date"]
