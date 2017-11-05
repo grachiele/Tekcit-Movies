@@ -6,9 +6,9 @@
     <% if !@showtimes.empty? %>
         <% @showtimes.each do |showtime| %>
           <div class="ui fluid card">
-            <img src=<%= showtime.movie.thumbnail%> height="200" >
+            <img src=<%= showtime.movie.poster%> height="200" >
             <div class="content">
-              <p class="ui centered header"><%= showtime.movie.name %></p>
+              <p class="ui centered header"><%= showtime.movie.title %></p>
               <b>Date:</b> <%= showtime.show_date %><br />
               <b>Showtime:</b> <%= showtime.start_time %><br />
             </div>

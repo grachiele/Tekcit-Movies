@@ -70,9 +70,9 @@ end
 end
 
 #Showtimes
-400.times do
+2000.times do
   hour = rand(1..24)
-  minutes = %w[00, 15, 30, 45].sample
+  minutes = %w[00 15 30 45].sample
   start_time = "#{hour}:#{minutes}"
   movie = Movie.all.sample
   #set the show date within three months of the movies release date
