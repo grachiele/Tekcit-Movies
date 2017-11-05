@@ -1,16 +1,16 @@
 <h1 align="center">Avaliable <%= @genre.name %> Movies</h1>
-
+<%movie_list = Movie.all.select { |movie| movie.genre_id.include?(@genre.id) }%>
 <div class="card_padding">
   <div class="ui four doubling cards">
-    <% @movies.each do |movie| %>
+    <% movie_list.each do |movie| %>
       <div class="card">
-        <img src=<%= movie.thumbnail%> height="200">
+        <img src=<%= movie.poster%> height="200">
         <div class="content">
           <div class="ui centered header">
-            <%= movie.name %>
+            <%= movie.title %>
           </div>
         </div>
-        <%= button_to "See Movie Info", movie_path(movie), {method: :get, class: "fluid ui black button"}  %>
+        <%= button_to "See Movie Info", movie_path(movie.id), {method: :get, class: "fluid ui black button"}  %>
       </div>
     <% end %>
   </div>

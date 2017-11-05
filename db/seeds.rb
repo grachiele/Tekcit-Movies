@@ -78,5 +78,14 @@ end
   #set the show date within three months of the movies release date
   movie_release = Date.parse(movie.release_date)
   show_date = movie_release += rand(10...90)
-  Showtime.create(start_time: start_time, movie_id: Movie.all.sample.id, movie_theatre_id: MovieTheatre.all.sample.id, show_date: show_date )
+  Showtime.create(start_time: start_time, movie_id: Movie.all.sample.id, movie_theatre_id: MovieTheatre.all.sample.id, show_date: show_date, tickets_left: rand(0...10) )
 end
+
+#Create Demo User
+user = User.new
+user.first_name = "Steve"
+user.last_name = "Taylor"
+user.email = "steve.taylor@gmail.com"
+user.username = "steve.taylor"
+user.password = "helloworld!"
+user.save

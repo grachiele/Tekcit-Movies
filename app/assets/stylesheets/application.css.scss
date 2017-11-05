@@ -13,17 +13,18 @@
  *= require_tree .
  *= require_self
  */
-@import "semantic-ui";
 
 a {
-  color: black;
+    color: black;
 }
 
 a:hover {
-  color: black;
+    color: black;
 }
 
 .card_padding {
-  padding-left: 5%;
-  padding-right: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
+
+@import "semantic-ui";

@@ -8,8 +8,12 @@
       <% if item.class.method_defined? :thumbnail %>
         <img src=<%= item.thumbnail%> height="200">
       <% else %>
-        <!-- Genre currently has no thumbnails -->
-        <img src=<%= Movie.all.sample.thumbnail%> height="200" >
+        <%movie_list = Movie.all.select { |movie| movie.genre_id.include?(item.id) }%>
+        <%if !movie_list.empty?%>
+          <img src=<%= movie_list.sample.poster%> height="200" >
+        <%else%>  
+          <img src="https://jackweather-140005.appspot.com/res/0.jpg" height="200" >
+        <%end%>
       <% end %>
       <div class="content">
         <div class="ui centered header"> <%= item.name %></div>

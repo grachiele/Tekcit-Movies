@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Semantic files
-gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'semantic-ui-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use postgreSQL as the database for Active Record
