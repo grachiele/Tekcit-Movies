@@ -30,7 +30,7 @@
   <div class="ui four centered doubling cards">
     <% @items.order(:title).each do |item| %>
     <a class="card" href="/<%= item.class.to_s.downcase.pluralize %>/<%= item.id %>" >
-        <img class="lazy" src=<%=item.smaller_poster%> data-src=<%= item.poster%> height="200px" >
+        <img class="lazy"  data-src=<%= item.poster%> height="200px" >
       <div class="content">
         <div class="ui centered header"> <%= item.title %></div>
       </div>

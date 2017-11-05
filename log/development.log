@@ -19736,3 +19736,207 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 78ms (Views: 75.9ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/movies" for 127.0.0.1 at 2017-11-05 17:33:50 -0500
+Processing by MoviesController#index as HTML
+  Rendering shared/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered shared/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 238ms (Views: 229.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-05 17:33:53 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCity Load (1.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[36mMovieTheatre Load (5.7ms)[0m  [1m[34mSELECT "movie_theatres".* FROM "movie_theatres"[0m
+  [1m[36mMovie Load (5.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered welcome/index.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 107ms (Views: 89.9ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2017-11-05 17:33:57 -0500
+Processing by MoviesController#index as HTML
+  Rendering shared/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (5.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (3.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered shared/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 111ms (Views: 100.7ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/movies/431530" for 127.0.0.1 at 2017-11-05 17:34:04 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"431530"}
+  [1m[36mMovie Load (3.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 431530], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mShowtime Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "showtimes" WHERE (movie_id = 431530) LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShowtime Load (6.7ms)[0m  [1m[34mSELECT "showtimes".* FROM "showtimes" WHERE (movie_id = 431530)[0m
+  [1m[36mMovieTheatre Load (1.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.7ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.7ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.6ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.6ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.7ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (1.2ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.6ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.6ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.6ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered movies/show.html.erb within layouts/application (103.8ms)
+Completed 200 OK in 179ms (Views: 149.6ms | ActiveRecord: 25.7ms)
+
+
+Started GET "/movies/431530" for 127.0.0.1 at 2017-11-05 17:34:28 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"431530"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 431530], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mShowtime Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "showtimes" WHERE (movie_id = 431530) LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShowtime Load (1.2ms)[0m  [1m[34mSELECT "showtimes".* FROM "showtimes" WHERE (movie_id = 431530)[0m
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.7ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.7ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.4ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered movies/show.html.erb within layouts/application (78.2ms)
+Completed 200 OK in 165ms (Views: 148.2ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-05 17:34:31 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[36mMovieTheatre Load (3.4ms)[0m  [1m[34mSELECT "movie_theatres".* FROM "movie_theatres"[0m
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mCACHE Movie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered welcome/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 81ms (Views: 72.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2017-11-05 17:34:32 -0500
+Processing by MoviesController#index as HTML
+  Rendering shared/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (2.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered shared/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 124ms (Views: 118.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2017-11-05 17:35:13 -0500
+Processing by MoviesController#index as HTML
+  Rendering shared/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (3.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered shared/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 82ms (Views: 77.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2017-11-05 17:35:28 -0500
+Processing by MoviesController#index as HTML
+  Rendering shared/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered shared/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 78ms (Views: 75.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2017-11-05 17:35:35 -0500
+Processing by MoviesController#index as HTML
+  Rendering shared/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered shared/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 1.7ms)
+
+
