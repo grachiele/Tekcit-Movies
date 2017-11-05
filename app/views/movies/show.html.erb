@@ -26,13 +26,13 @@
                   <%= f.hidden_field :user_id, :value => session[:user_id]%>
                   <%= f.hidden_field :showtime_id, :value => showtime.id %>
                   <div class="fluid ui labeled button">
-                    <%= f.submit "Purchase Ticket" class: "fluid ui black button" %>
+                    <%= f.submit "Purchase Ticket", class: "fluid ui black button" %>
                     <% if showtime.tickets_left >= 7 %>
-                      <%= f.label "Tickets Left: #{showtime.tickets_left}" class: "ui blue label" %>
+                      <%= f.label "Tickets Left: #{showtime.tickets_left}", class: "ui blue label" %>
                     <% elsif showtime.tickets_left < 7 && showtime.tickets_left >= 3 %>
-                        <%= f.label "Tickets Left: #{showtime.tickets_left}" class: "ui yellow label" %>
+                        <%= f.label "Tickets Left: #{showtime.tickets_left}", class: "ui yellow label" %>
                     <% else %>
-                        <%= f.label "Tickets Left: #{showtime.tickets_left}" class: "ui red label" %>
+                        <%= f.label "Tickets Left: #{showtime.tickets_left}", class: "ui red label" %>
                     <% end %>
                   </div>
                 <% end %>

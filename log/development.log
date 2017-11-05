@@ -610,3 +610,92 @@ Processing by MovieTheatresController#show as HTML
 Completed 200 OK in 117ms (Views: 97.7ms | ActiveRecord: 8.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-05 12:38:48 -0500
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  [1m[36mCity Load (7.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[36mMovieTheatre Load (5.9ms)[0m  [1m[34mSELECT "movie_theatres".* FROM "movie_theatres"[0m
+  [1m[36mMovie Load (4.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered welcome/index.html.erb within layouts/application (81.2ms)
+Completed 200 OK in 527ms (Views: 472.5ms | ActiveRecord: 44.9ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2017-11-05 12:38:52 -0500
+Processing by MoviesController#index as HTML
+  Rendering shared/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.9ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (1.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."title" ASC[0m
+  Rendered shared/index.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 134ms (Views: 118.8ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/movies/337170" for 127.0.0.1 at 2017-11-05 12:38:53 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"337170"}
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 337170], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 13.0ms)
+
+
+  
+SyntaxError (/Users/kesean/Development/Projects/Tekcit-Movies/app/views/movies/show.html.erb:29: syntax error, unexpected keyword_class, expecting ')'
+submit "Purchase Ticket" class: "fluid ui black button" );@o
+                              ^
+/Users/kesean/Development/Projects/Tekcit-Movies/app/views/movies/show.html.erb:31: syntax error, unexpected keyword_class, expecting ')'
+{showtime.tickets_left}" class: "ui blue label" );@output_bu
+                              ^
+/Users/kesean/Development/Projects/Tekcit-Movies/app/views/movies/show.html.erb:33: syntax error, unexpected keyword_class, expecting ')'
+{showtime.tickets_left}" class: "ui yellow label" );@output_
+                              ^
+/Users/kesean/Development/Projects/Tekcit-Movies/app/views/movies/show.html.erb:35: syntax error, unexpected keyword_class, expecting ')'
+{showtime.tickets_left}" class: "ui red label" );@output_buf
+                              ^):
+  
+app/views/movies/show.html.erb:29: syntax error, unexpected keyword_class, expecting ')'
+app/views/movies/show.html.erb:31: syntax error, unexpected keyword_class, expecting ')'
+app/views/movies/show.html.erb:33: syntax error, unexpected keyword_class, expecting ')'
+app/views/movies/show.html.erb:35: syntax error, unexpected keyword_class, expecting ')'
+Started GET "/movies/337170" for 127.0.0.1 at 2017-11-05 12:40:59 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"337170"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 337170], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/kesean/Development/Projects/Tekcit-Movies/app/views/movies/show.html.erb:31: syntax error, unexpected keyword_class, expecting ')'
+{showtime.tickets_left}" class: "ui blue label" );@output_bu
+                              ^
+/Users/kesean/Development/Projects/Tekcit-Movies/app/views/movies/show.html.erb:33: syntax error, unexpected keyword_class, expecting ')'
+{showtime.tickets_left}" class: "ui yellow label" );@output_
+                              ^
+/Users/kesean/Development/Projects/Tekcit-Movies/app/views/movies/show.html.erb:35: syntax error, unexpected keyword_class, expecting ')'
+{showtime.tickets_left}" class: "ui red label" );@output_buf
+                              ^):
+  
+app/views/movies/show.html.erb:31: syntax error, unexpected keyword_class, expecting ')'
+app/views/movies/show.html.erb:33: syntax error, unexpected keyword_class, expecting ')'
+app/views/movies/show.html.erb:35: syntax error, unexpected keyword_class, expecting ')'
+Started GET "/movies/337170" for 127.0.0.1 at 2017-11-05 12:41:20 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"337170"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 337170], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mShowtime Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "showtimes" WHERE (movie_id = 337170) LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShowtime Load (0.9ms)[0m  [1m[34mSELECT "showtimes".* FROM "showtimes" WHERE (movie_id = 337170)[0m
+  [1m[36mMovieTheatre Load (0.5ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 255], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.3ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 260], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.3ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 263], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.3ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 275], ["LIMIT", 1]]
+  [1m[36mCACHE MovieTheatre Load (0.0ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 255], ["LIMIT", 1]]
+  [1m[36mMovieTheatre Load (0.3ms)[0m  [1m[34mSELECT  "movie_theatres".* FROM "movie_theatres" WHERE "movie_theatres"."id" = $1 LIMIT $2[0m  [["id", 262], ["LIMIT", 1]]
+  Rendered movies/show.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 107ms (Views: 89.9ms | ActiveRecord: 14.4ms)
+
+
