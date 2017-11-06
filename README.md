@@ -54,7 +54,7 @@ rails s
 ## Authors
 
 * [Ke'sean Woodhouse](https://github.com/kesean) - *Project Owner* 
-* [Gianpaul Rachiele](https://github.com/grachiele) - *Friend, Partner for Older Version*
+* [Gianpaul Rachiele](https://github.com/grachiele) - *Partner for initial repo*
 
 ## License
 
